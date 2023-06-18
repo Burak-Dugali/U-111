@@ -46,7 +46,7 @@ Oyuculara, ana karakterimizin hikayesini hem kasabalı ile konuşarak hem de gö
 
 Miro board üzerinde gözüken, yapılacaklar – yapım aşamasında – yapılanlar kısmından gelişmeler takip edilmektedir. <br/>
 
-•	**Daily Scrum** :  Daily Scrum toplantılarının zamansal sebeplerden dolayı Discord üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneğini Word dosyası olarak Readme’de tarafımızdan paylaşılmaktadır. <br/>
+•	**Daily Scrum** :  Daily Scrum toplantılarının zamansal sebeplerden dolayı Discord sesli kanalı üzerinden yapılmasına karar verilmiştir. Konuşmalar içerisinde ihtiyaç duyulan şeyler metin kanallarında not olarak alınmıştır. Daily Scrum toplantısı örneğini Word dosyası olarak Readme’de tarafımızdan paylaşılmaktadır: [U-111 Discord Daily Scrum Chats](https://github.com/Burak-Dugali/U-111/blob/main/U-111%20Discord%20Daily%20Scrum%20Chats.docx) <br/>
 
 •	**Sprint Board** : 
 ![U-111 Miro Board](https://github.com/Burak-Dugali/U-111/blob/main/U-111%20Miro%20Board.png)
