@@ -61,9 +61,10 @@ Miro board üzerinde gözüken, yapılacaklar – yapım aşamasında – yapıl
 •	**Sprint Review** : Alınan Kararlar: Oyun kararlaştırıldıktan sonra görevlere ve hikayeye karar verilmiş, geliştirilmiştir. Karakter tasarımlarındaki eksikler konuşulmuştur, kısa sürede yazılım sürecine başlanmasına karar verilmiştir.  Katılımcılar : Bütün ekip 
 
 •	**Sprint Retrospective** : <br/>
-Koordineli çalışması gereken kişilerin iletişimi artırması istenmiştir <br/>
-Kısa sürede yazılım kısmına geçip, ürünün geliştirilmesine karar verilmiştir <br/>
-Yakın zamanda gelecek olan bayram tatilinin ürün geliştirmesini etkilememesi için dikkat edilmesi gerektiği konuşulmuştur <br/>
+o	Koordineli çalışması gereken kişilerin iletişimi artırması istenmiştir.  <br/>
+o	Kısa sürede yazılım kısmına geçip, ürünün geliştirilmesine karar verilmiştir.  <br/>
+o	Yakın zamanda gelecek olan bayram tatilinin ürün geliştirmesini etkilememesi için dikkat edilmesi gerektiği konuşulmuştur.  <br/>
+
 
 
 
