@@ -65,6 +65,9 @@ o	Koordineli çalışması gereken kişilerin iletişimi artırması istenmişti
 o	Kısa sürede yazılım kısmına geçip, ürünün geliştirilmesine karar verilmiştir.  <br/>
 o	Yakın zamanda gelecek olan bayram tatilinin ürün geliştirmesini etkilememesi için dikkat edilmesi gerektiği konuşulmuştur.  <br/>
 
+# Product Backlog URL 
+
+[Unity Team 111 Miro Backlog Board](https://miro.com/app/board/uXjVM_9kYqM=/?share_link_id=616186124308)
 
 
 
