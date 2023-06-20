@@ -134,9 +134,10 @@ GameObject:
   - component: {fileID: 346069583}
   - component: {fileID: 346069582}
   - component: {fileID: 346069581}
+  - component: {fileID: 346069584}
   m_Layer: 0
-  m_Name: NPC
-  m_TagString: Untagged
+  m_Name: NPCKevin
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,6 +254,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &346069584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346069580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58889297729af5479cff17de07f1776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KevinText: Deneme Deneme Deneme
+  Kevin2Text: Deneme Deneme
+  Kevin3Text: Deneme
 --- !u!1 &468001564
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c38164e0cabff3f4fab5ccc0b0e0c9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogueSystem: {fileID: 1497171320}
 --- !u!4 &468001566
 Transform:
   m_ObjectHideFlags: 0
@@ -714,7 +729,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1497171320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,6 +744,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetText: {fileID: 2064691477}
   nameText: {fileID: 777398172}
+  currentDialogue: {fileID: 0}
+  currentTextLine: 0
 --- !u!224 &1497171321
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1038,9 +1055,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2000871617}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebe98e93fe44ec7489c5d6a12bfebfad, type: 3}
+  m_Script: {fileID: 11500000, guid: eda2846b4911cf643a2962c7a3a04a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DialoguePanel: {fileID: 1497171319}
+  NPCName: {fileID: 777398172}
+  InDalogue: 0
 --- !u!1 &2064691474
 GameObject:
   m_ObjectHideFlags: 0
