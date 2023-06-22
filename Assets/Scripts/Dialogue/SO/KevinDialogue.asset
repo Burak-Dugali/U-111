@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f56be13506ae4ea44a320ceb940c90fc, type: 3}
+  m_Name: KevinDialogue
+  m_EditorClassIdentifier: 
+  Texts:
+  - "G\xFCnayd\u0131n! Ne kadar da g\xFCzel bir g\xFCn."
+  - "G\xFCnayd\u0131n! Evet ger\xE7ekten de \xF6yle."
+  - "Karn\u0131m \xE7ok ac\u0131kt\u0131. Acaba bana yiyecek bir\u015Feyler verir
+    misin?"
+  - "Tabiki! Ama \xF6nce bana \xE7ift\xE7iden sebze ve meyve getirmelisin."
+  - Hemen getirip geliyorum.
+  NPCAsset: {fileID: 21300000, guid: bf7ac026cfb655543baa1f4664449cf2, type: 3}

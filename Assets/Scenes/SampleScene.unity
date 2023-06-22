@@ -722,7 +722,6 @@ GameObject:
   - component: {fileID: 1497171321}
   - component: {fileID: 1497171323}
   - component: {fileID: 1497171322}
-  - component: {fileID: 1497171320}
   m_Layer: 5
   m_Name: DialoguePanel
   m_TagString: Untagged
@@ -730,22 +729,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1497171320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497171319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 776860ac7dcc6fd40999ae2d28f60cbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetText: {fileID: 2064691477}
-  nameText: {fileID: 777398172}
-  currentDialogue: {fileID: 0}
-  currentTextLine: 0
 --- !u!224 &1497171321
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1060,7 +1043,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialoguePanel: {fileID: 1497171319}
   NPCName: {fileID: 777398172}
-  InDalogue: 0
+  NPCSprite: {fileID: 1802643144}
+  _currentText: {fileID: 2064691477}
+  _kevinDialogue: {fileID: 11400000, guid: e4c5fc50cac2804448946fc56fa03d2d, type: 2}
+  _playerDialogue: {fileID: 11400000, guid: 3bd7463c0c5fa6648a92d5220e3d53ca, type: 2}
 --- !u!1 &2064691474
 GameObject:
   m_ObjectHideFlags: 0
