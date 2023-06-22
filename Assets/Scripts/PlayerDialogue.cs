@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Dialogue;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,11 +16,13 @@ public class PlayerDialogue : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _currentText;
     
     public bool InDialogue;
+    private bool _canbeTalk;
     private int _dialougeCounter;
 
     private Collider2D collider;
     private string _kevinFirstText = "Hala Getireceğin malzemeleri bekliyorum";
-
+    private bool _kevinTakeFirstMission;
+    
     [Header("SO")]
     [SerializeField] private DialogueCreator _kevinDialogue;
     [SerializeField] private DialogueCreator _playerDialogue;
@@ -30,20 +33,37 @@ public class PlayerDialogue : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        
+        if (Input.GetKeyDown(KeyCode.E) && _canbeTalk)
         {
             InDialogue = true;
         }
-
+        
         if (Input.GetKeyDown(KeyCode.Space) && InDialogue)
         {
             _dialougeCounter++;
             OnTriggerStay2D(collider);
+            if (_kevinTakeFirstMission)
+            {
+                InDialogue = false;
+            }
         }
 
         if (InDialogue == false)
         {
             DialoguePanel.SetActive(false);
+        }
+        else
+        {
+            DialoguePanel.SetActive(true);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("NPC") && InDialogue == false)
+        {
+            _canbeTalk = true;
         }
     }
 
@@ -63,27 +83,29 @@ public class PlayerDialogue : MonoBehaviour
                     case 4:
                         NPCSprite.sprite = _playerDialogue.NPCAsset;
                         break;
-                    case 5:
-                        //_currentText.text = _kevinFirstText;
-                        break;
                     default:
                         NPCSprite.sprite = _kevinDialogue.NPCAsset;
                         break;
                 }
 
-                if (_dialougeCounter < _kevinDialogue.Texts.Capacity - 1)
+                if (_kevinTakeFirstMission)
                 {
-                    _currentText.text = _kevinDialogue.Texts[_dialougeCounter];
+                    _currentText.text = "Malzemeleri hala getirmedin mi!";
                 }
-                //else if (_dialougeCounter == _kevinDialogue.Texts.Capacity)
-                //{
-                //    _currentText.text = _kevinFirstText;
-                //}
                 else
                 {
-                    InDialogue = false;
-                    _dialougeCounter--;
+                    if (_dialougeCounter < _kevinDialogue.Texts.Capacity)
+                    {
+                        _currentText.text = _kevinDialogue.Texts[_dialougeCounter];
+                    }
+                    else
+                    {
+                        _kevinTakeFirstMission = true;
+                        InDialogue = false;
+                        _currentText.text = "Malzemeleri hala getirmedin mi!";
+                    }
                 }
+                
             }
         }
     }
@@ -92,7 +114,7 @@ public class PlayerDialogue : MonoBehaviour
     {
         if (other.CompareTag("NPC"))
         {
-            DialoguePanel.SetActive(false);
+            _canbeTalk = false;
             InDialogue = false;
         }
     }
