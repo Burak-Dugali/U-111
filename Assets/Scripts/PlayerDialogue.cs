@@ -14,10 +14,11 @@ public class PlayerDialogue : MonoBehaviour
     [SerializeField] private Image NPCSprite;
     [SerializeField] private TextMeshProUGUI _currentText;
     
-    private bool InDialogue;
+    public bool InDialogue;
     private int _dialougeCounter;
 
     private Collider2D collider;
+    private string _kevinFirstText = "Hala Getireceğin malzemeleri bekliyorum";
 
     [Header("SO")]
     [SerializeField] private DialogueCreator _kevinDialogue;
@@ -53,7 +54,6 @@ public class PlayerDialogue : MonoBehaviour
             collider = other;
             NPCName.text = other.name;
             DialoguePanel.SetActive(true);
-            Debug.Log(_dialougeCounter);
             if (other.name == "NPCKevin")
             {
                 switch (_dialougeCounter)
@@ -63,18 +63,26 @@ public class PlayerDialogue : MonoBehaviour
                     case 4:
                         NPCSprite.sprite = _playerDialogue.NPCAsset;
                         break;
+                    case 5:
+                        //_currentText.text = _kevinFirstText;
+                        break;
                     default:
                         NPCSprite.sprite = _kevinDialogue.NPCAsset;
                         break;
                 }
 
-                if (_dialougeCounter < _kevinDialogue.Texts.Capacity)
+                if (_dialougeCounter < _kevinDialogue.Texts.Capacity - 1)
                 {
                     _currentText.text = _kevinDialogue.Texts[_dialougeCounter];
                 }
+                //else if (_dialougeCounter == _kevinDialogue.Texts.Capacity)
+                //{
+                //    _currentText.text = _kevinFirstText;
+                //}
                 else
                 {
                     InDialogue = false;
+                    _dialougeCounter--;
                 }
             }
         }

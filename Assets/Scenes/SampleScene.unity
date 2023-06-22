@@ -1045,6 +1045,7 @@ MonoBehaviour:
   NPCName: {fileID: 777398172}
   NPCSprite: {fileID: 1802643144}
   _currentText: {fileID: 2064691477}
+  InDialogue: 0
   _kevinDialogue: {fileID: 11400000, guid: e4c5fc50cac2804448946fc56fa03d2d, type: 2}
   _playerDialogue: {fileID: 11400000, guid: 3bd7463c0c5fa6648a92d5220e3d53ca, type: 2}
 --- !u!1 &2064691474
