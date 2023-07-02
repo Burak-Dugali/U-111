@@ -70,5 +70,29 @@ o	Yakın zamanda gelecek olan bayram tatilinin ürün geliştirmesini etkilememe
 [Unity Team 111 Miro Backlog Board](https://miro.com/app/board/uXjVM_9kYqM=/?share_link_id=616186124308)
 
 
+# Sprint 2
 
+•	**Sprint Notları** : User story’ler product backlog’ların içerisine yazılmıştır. Product backlog itemlere tıklandığında hikayelerin detaylarına ulaşılabilir. <br/>
 
+•	**Sprint İçerisinde Tamamlanması Tahmin Edilen Puan** :  40 <br/>
+
+•	**Daily Scrum** :  Daily Scrum'lar akşam saat dokuz – on arasında takım üyeleri için uygun saate göre seçilmiş, Discord sesli kanalından gerçekleştirilmiştir. Gerektiği zamanlarda o konu için açılan metin kanalında notlar paylaşılmıştır. ( Gün içerisinde gerekli durumlarda whatsapp üzerinden mesajlaşarak ihtiyaç duyulan şeyler söylenmiştir. ) Daily Scrum toplantısı örneğini Word dosyası olarak Readme’de tarafımızdan paylaşılmaktadır: [U-111 Discord Daily Scrum Chats](https://github.com/Burak-Dugali/U-111/blob/main/U-111%20Daily%20Scrum%20Discord%20-%20Whatsapp%20Chats.docx) <br/>
+
+•	**Backlog düzeni ve Story seçimleri**: Backlog ilk yapılması gereken storylere göre ayarlanmıştır. Birbiri ile bağlantılı görevler paralel şekilde ilerlemesi için planlama yapılmıştır. <br/>
+
+[Unity Team 111 Miro Backlog Board](https://miro.com/app/board/uXjVM_9kYqM=/?share_link_id=616186124308)
+
+•	**Sprint Board Update** : 
+![U-111 Miro Board](https://cdn.discordapp.com/attachments/1119696574004609196/1125151384522723391/Sprint_2.png)
+
+•	**Ürün Durumu** :  Harita tasarımı tamamlanmak üzeredir, hikaye içerisindeki konuşmalar yazılmış, karakterlerin portre çizimleri tamamlanmıştır. Kodlamaya adım atılmıştır. 
+
+![U-111 Karakter Portreleri](https://cdn.discordapp.com/attachments/1119696574004609196/1125155185266786444/yaakn_yuzler_1.png)
+
+![U-111 Harita Tasarımı](https://cdn.discordapp.com/attachments/1118253717226016798/1125135020709912697/2023-07-02_1.png)
+
+•	**Sprint Review** : Alınan kararlar: Araya giren bayram tatili ile beklenen puanın tamamlanamamasından dolayı daha hızlı ama planlı bir şekilde hareket edilmesi gerektiğine karar verilmiştir. Çok fazla bug olmasına neden olacağı beklendiğinden dolayı konuşmalar için yazılan kodlarda değişiklik/çözüm yoluna girilmesine karar verilmiştir. Katılımcılar : Enes Taha Tınmaz, Zeynep Bozkır, Efranur Aksoy, İpek Bozkurt
+
+•	Sprint Retrospective : 
+o	Daha hızlı ama planlı bir şekilde ilerlenmesine karar verilmiştir. <br/>
+o	Bayramdan dolayı kopan iletişimin eskisi gibi sık ve düzenli bir hale gelmesine karar verilmiştir.<br/>
