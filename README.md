@@ -93,6 +93,6 @@ o	Yakın zamanda gelecek olan bayram tatilinin ürün geliştirmesini etkilememe
 
 •	**Sprint Review** : Alınan kararlar: Araya giren bayram tatili ile beklenen puanın tamamlanamamasından dolayı daha hızlı ama planlı bir şekilde hareket edilmesi gerektiğine karar verilmiştir. Çok fazla bug olmasına neden olacağı beklendiğinden dolayı konuşmalar için yazılan kodlarda değişiklik/çözüm yoluna girilmesine karar verilmiştir. Katılımcılar : Enes Taha Tınmaz, Zeynep Bozkır, Efranur Aksoy, İpek Bozkurt
 
-•	Sprint Retrospective : 
+•	Sprint Retrospective : <br/>
 o	Daha hızlı ama planlı bir şekilde ilerlenmesine karar verilmiştir. <br/>
 o	Bayramdan dolayı kopan iletişimin eskisi gibi sık ve düzenli bir hale gelmesine karar verilmiştir.<br/>
