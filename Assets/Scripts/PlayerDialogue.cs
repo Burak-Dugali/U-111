@@ -20,7 +20,6 @@ public class PlayerDialogue : MonoBehaviour
     private int _dialougeCounter;
 
     private Collider2D collider;
-    private string _kevinFirstText = "Hala Getireceğin malzemeleri bekliyorum";
     private bool _kevinTakeFirstMission;
     
     [Header("SO")]
