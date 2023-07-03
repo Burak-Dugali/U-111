@@ -12,4 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f56be13506ae4ea44a320ceb940c90fc, type: 3}
   m_Name: ObjectiveNPCDialogue
   m_EditorClassIdentifier: 
-  Texts: []
+  Texts:
+  - "Demek bug\xFCne de yine beraber ba\u015Flad\u0131k, a\u011Fa\xE7 bey. "
+  - "Karn\u0131m a\xE7 o y\xFCzden \u015Fimdi seni yaln\u0131z b\u0131rakmam gerek.
+    G\xF6r\xFC\u015F\xFCr\xFCz."
+  - "G\xFCnayd\u0131n, Steve. "
+  - "G\xFCnayd\u0131n, her zamankinden alabilir miyim?"
+  - "Bug\xFCn erkencisin. Daha \xE7ift\xE7i bile malzeme b\u0131rakmak i\xE7in u\u011Framad\u0131.
+    Ondan malzemeleri al\u0131p, buraya getirirsen kahvalt\u0131n k\u0131sa s\xFCrede
+    haz\u0131r olur!"
+  - "G\xFCnayd\u0131n Steve. Bu saatte burada ne yap\u0131yorsun?"
+  - "sebzeleri ve meyveleri kaplumba\u011Fa ile yollad\u0131\u011F\u0131n i\xE7in
+    handaki herkes a\xE7. Malzemeleri g\xF6t\xFCrecek tav\u015Fan olmak i\xE7in geldim.
+    S"
+  - "Ha Ha. Benim yapmam gereken \xE7ok \u015Fey var, steve. Sen bah\xE7emi temizlerken,
+    malzemeleri haz\u0131rlayabilirim ama. Ne dersin?"
+  - ...
+  - "Te\u015Fekk\xFCrler tav\u015Fanc\u0131k. art\u0131k bunlar\u0131 g\xF6t\xFCrebilirsin. "
+  - "Getirdi\u011Fin i\xE7in te\u015Fekk\xFCr ederim. "
+  - "Her zamankinden haz\u0131rlad\u0131m. \u0130\xE7ecek de her zamanki gibi bira
+    m\u0131? "
