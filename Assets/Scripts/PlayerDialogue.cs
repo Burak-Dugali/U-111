@@ -80,10 +80,8 @@ public class PlayerDialogue : MonoBehaviour
                     case 0:
                     case 2:
                     case 4:
-                        NPCSprite.sprite = _playerDialogue.NPCAsset;
                         break;
                     default:
-                        NPCSprite.sprite = _kevinDialogue.NPCAsset;
                         break;
                 }
 

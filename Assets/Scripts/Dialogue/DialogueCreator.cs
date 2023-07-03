@@ -8,6 +8,5 @@ namespace Dialogue
     public class DialogueCreator : ScriptableObject
     {
         public List<string> Texts;
-        public Sprite NPCAsset;
     }
 }

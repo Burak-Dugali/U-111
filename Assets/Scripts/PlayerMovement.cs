@@ -6,16 +6,16 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
-    private PlayerDialogue _playerDialogue;
+    private DialogueSystem _dialogueSystem;
 
     private void Awake()
     {
-        _playerDialogue = gameObject.GetComponent<PlayerDialogue>();
+        _dialogueSystem = gameObject.GetComponent<DialogueSystem>();
     }
 
     void Update()
     {
-        if (!_playerDialogue.InDialogue)
+        if (!_dialogueSystem.InDialogue)
         {
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
