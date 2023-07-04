@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 15f;
+    private Rigidbody2D rb;
     private DialogueSystem _dialogueSystem;
 
     private void Awake()
     {
+        rb = gameObject.GetComponent<Rigidbody2D>();
         _dialogueSystem = gameObject.GetComponent<DialogueSystem>();
     }
 

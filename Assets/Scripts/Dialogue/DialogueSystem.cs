@@ -74,6 +74,7 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(_dialougeCounter);
         //Debug.Log(InDialogue + "  In dialogue");
         //Debug.Log(InNPCDialogue + "  In NPC dialogue");
         //Debug.Log(_canbeTalk + "  Can be talk");
@@ -91,7 +92,6 @@ public class DialogueSystem : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.E) && _canbeTalk)
         {
             InDialogue = true;
-            //InNPCDialogue = true;
             _canbeTalk = true;
         }
 
@@ -110,19 +110,7 @@ public class DialogueSystem : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space) && InDialogue)
         {
-            _dialougeCounter++;
-            if (!_entryTextCompleted)
-            {
-                if (_dialougeCounter == 1)
-                {
-                    FirstText();
-                    _entryTextCompleted = true;
-                }
-            }
-            else
-            {
-                OnTriggerStay2D(collider);
-            }
+            NextText();
         }
 
         if (InDialogue == false && InNPCDialogue == false)
@@ -140,6 +128,22 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
+    private void NextText()
+    {
+        _dialougeCounter++;
+        if (!_entryTextCompleted)
+        {
+            if (_dialougeCounter == 1)
+            {
+                FirstText();
+                _entryTextCompleted = true;
+            }
+        }
+        else
+        {
+            OnTriggerStay2D(collider);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("NPC") || (col.CompareTag("ObjectiveNPC") && InDialogue == false))
@@ -179,11 +183,11 @@ public class DialogueSystem : MonoBehaviour
                 case 0:
                 case 1:
                 case 4:
-                case 7:
-                case 9:
+                case 8:
+                case 10:
                     _npcSprite.sprite = Kahraman;
                     break;
-                case 13:    
+                case 15:    
                     _npcSprite.sprite = Kahraman;
                     AlkolButton1.SetActive(true);
                     AlkolButton2.SetActive(true);
@@ -193,13 +197,15 @@ public class DialogueSystem : MonoBehaviour
                 case 5:
                     _npcSprite.sprite = Hanci;
                     break;
-                case 11:
+                case 13:
                     InDialogue = false;
                     _npcSprite.sprite = Hanci;
-                    HanciGo.tag = "ObjectiveNPC";
-                    CiftciGo.tag = "NPC";
                     break;
-                case 12:    
+                case 14:
+                case 16:
+                case 17:
+                    AlkolButton1.SetActive(false);
+                    AlkolButton2.SetActive(false);
                     _npcSprite.sprite = Hanci;
                     break;
                 //Çiftçi
@@ -208,14 +214,22 @@ public class DialogueSystem : MonoBehaviour
                     HanciGo.tag = "NPC";
                     CiftciGo.tag = "ObjectiveNPC";
                     _npcSprite.sprite = Ciftci;
+                    _dialougeCounter++;
                     break;
-                case 8:
+                case 7:
+                case 9:
                     _npcSprite.sprite = Ciftci;
                     break;
-                case 10:
+                case 11:
                     InDialogue = false;
                     _npcSprite.sprite = Ciftci;
-                    return;
+                    break;
+                case 12:
+                    InDialogue = false;
+                    HanciGo.tag = "ObjectiveNPC";
+                    CiftciGo.tag = "NPC";
+                    _dialougeCounter++;
+                    break;
             }
         }
     }
@@ -246,11 +260,11 @@ public class DialogueSystem : MonoBehaviour
     public void ChooseDrink()
     {
         _alkolCounter++;
-        _dialougeCounter++;
+        NextText();
     }
 
     public void ChooseDontDrink()
     {
-        _dialougeCounter++;
+        NextText();
     }
 }
