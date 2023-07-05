@@ -74,7 +74,8 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(_dialougeCounter);
+        Debug.Log(_canbeTalk);
+        //Debug.Log(_dialougeCounter);
         //Debug.Log(InDialogue + "  In dialogue");
         //Debug.Log(InNPCDialogue + "  In NPC dialogue");
         //Debug.Log(_canbeTalk + "  Can be talk");
@@ -137,6 +138,7 @@ public class DialogueSystem : MonoBehaviour
             {
                 FirstText();
                 _entryTextCompleted = true;
+                _canbeTalk = false;
             }
         }
         else
@@ -170,12 +172,15 @@ public class DialogueSystem : MonoBehaviour
                 case "Çiftçi":
                     _npcSprite.sprite = Ciftci;
                     break;
+                case "Çoban":
+                    _npcSprite.sprite = Coban;
+                    break;
             }
         }
 
         if (other.CompareTag("ObjectiveNPC") && InDialogue)
         {
-            //Debug.Log("Objective trigger calisti");
+            Debug.Log("Objective trigger calisti");
             _currentText.text = _objectiveNpcDialogue.Texts[_dialougeCounter];
             switch (_dialougeCounter)
             {
@@ -184,6 +189,14 @@ public class DialogueSystem : MonoBehaviour
                 case 1:
                 case 4:
                 case 8:
+                case 19:
+                case 21:   
+                case 24:
+                case 26:
+                case 29:
+                case 31:
+                case 34:
+                case 36:    
                 case 10:
                     _npcSprite.sprite = Kahraman;
                     break;
@@ -198,15 +211,23 @@ public class DialogueSystem : MonoBehaviour
                     _npcSprite.sprite = Hanci;
                     break;
                 case 13:
-                    InDialogue = false;
+                    //InDialogue = false;
                     _npcSprite.sprite = Hanci;
                     break;
                 case 14:
+                    _npcSprite.sprite = Hanci;
+                    break;
                 case 16:
-                case 17:
+                    _npcSprite.sprite = Hanci;
                     AlkolButton1.SetActive(false);
                     AlkolButton2.SetActive(false);
+                    break;
+                case 17:
+                    InDialogue = false;
                     _npcSprite.sprite = Hanci;
+                    HanciGo.tag = "NPC";
+                    BakkalGo.tag = "ObjectiveNPC";
+                    _dialougeCounter++;
                     break;
                 //Çiftçi
                 case 6:
@@ -230,6 +251,45 @@ public class DialogueSystem : MonoBehaviour
                     CiftciGo.tag = "NPC";
                     _dialougeCounter++;
                     break;
+                case 33: 
+                case 35:
+                case 37:
+                    _npcSprite.sprite = Ciftci;
+                    break;
+                case 38:
+                    InDialogue = false;
+                    CobanGo.tag = "ObjectiveNPC";
+                    CiftciGo.tag = "NPC";
+                    _dialougeCounter++;
+                    break;
+                //Bakkal
+                case 18:
+                case 20:
+                case 23:
+                case 25:    
+                    _npcSprite.sprite = Bakkal;
+                    break;
+                case 22:
+                    InDialogue = false;
+                    _dialougeCounter++;
+                    break;
+                case 27:
+                    InDialogue = false;
+                    CobanGo.tag = "ObjectiveNPC";
+                    BakkalGo.tag = "NPC";
+                    _dialougeCounter++;
+                    break;
+                //Çoban
+                case 28:
+                case 30:
+                    _npcSprite.sprite = Coban;
+                    break;
+                case 32:
+                    InDialogue = false;
+                    CiftciGo.tag = "ObjectiveNPC";
+                    CobanGo.tag = "NPC";
+                    _dialougeCounter++;
+                    break;
             }
         }
     }
@@ -238,15 +298,16 @@ public class DialogueSystem : MonoBehaviour
     {
         if (other.CompareTag("NPC"))
         {
-            _canbeTalk = true;
+            _canbeTalk = false;
             InDialogue = false;
             InNPCDialogue = false;
         }
 
         if (other.CompareTag("ObjectiveNPC"))
         {
+            Debug.Log("calisti");
             InNPCDialogue = false;
-            _canbeTalk = true;
+            _canbeTalk = false;
             InDialogue = false;
         }
     }
