@@ -9,10 +9,13 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private DialogueSystem _dialogueSystem;
 
+    private Animator anim;
+
     private void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         _dialogueSystem = gameObject.GetComponent<DialogueSystem>();
+        anim = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -22,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
         
-            Vector3 movement = new Vector3(horizontalInput, verticalInput, 0f) * speed * Time.deltaTime;
+            Vector2 movement = new Vector2(horizontalInput, verticalInput) * speed * Time.deltaTime;
         
             transform.Translate(movement);
         }
