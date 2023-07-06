@@ -16,6 +16,10 @@ public class DialogueSystem : MonoBehaviour
 
     public GameObject AlkolButton1;
     public GameObject AlkolButton2;
+    public TextMeshProUGUI ButtonText1;
+    public TextMeshProUGUI ButtonText2;
+    public GameObject YemekSecimi1;
+    public GameObject YemekSecimi2;
 
     private int _alkolCounter;
 
@@ -23,8 +27,9 @@ public class DialogueSystem : MonoBehaviour
     
     private bool InNPCDialogue;
     private bool _canbeTalk;
-    private bool _entryTextCompleted = false;
-    private int _dialougeCounter = 0;
+    private bool _entryTextCompleted;
+    private bool InChoose;
+    private int _dialougeCounter;
     
     private Collider2D collider;
 
@@ -63,6 +68,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private GameObject CicekciGo;
     [SerializeField] private GameObject CobanGo;
     [SerializeField] private GameObject OgretmenGo;
+    [SerializeField] private GameObject HomeGo;
     
 
     void Start()
@@ -74,7 +80,7 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(_canbeTalk);
+        //Debug.Log(_canbeTalk);
         //Debug.Log(_dialougeCounter);
         //Debug.Log(InDialogue + "  In dialogue");
         //Debug.Log(InNPCDialogue + "  In NPC dialogue");
@@ -109,7 +115,7 @@ public class DialogueSystem : MonoBehaviour
             _canbeTalk = true;
         }
         
-        if (Input.GetKeyDown(KeyCode.Space) && InDialogue)
+        if (Input.GetKeyDown(KeyCode.Space) && InDialogue && !InChoose)
         {
             NextText();
         }
@@ -178,9 +184,8 @@ public class DialogueSystem : MonoBehaviour
             }
         }
 
-        if (other.CompareTag("ObjectiveNPC") && InDialogue)
+        if ((other.CompareTag("ObjectiveNPC") && InDialogue))
         {
-            Debug.Log("Objective trigger calisti");
             _currentText.text = _objectiveNpcDialogue.Texts[_dialougeCounter];
             switch (_dialougeCounter)
             {
@@ -196,14 +201,38 @@ public class DialogueSystem : MonoBehaviour
                 case 29:
                 case 31:
                 case 34:
-                case 36:    
+                case 36:  
+                case 44:    
+                case 50:    
+                case 53:
+                case 55:    
                 case 10:
                     _npcSprite.sprite = Kahraman;
+                    break;
+                case 40:   
+                    YemekSecimi1.SetActive(true);
+                    YemekSecimi2.SetActive(true);
+                    _npcSprite.sprite = Kahraman;
+                    InChoose = true;
+                    break;
+                case 46:
+                    AlkolButton1.SetActive(true);
+                    AlkolButton2.SetActive(true);
+                    ButtonText1.text = "Kravatı bulmak için enerji lazım! (Alkol İçer)";
+                    ButtonText2.text = "Burayı temizleyip, bunlardan kurtulsam iyi olur! (Alkol içmez)";
+                    break;
+                case 48:
+                    _npcSprite.sprite = Kahraman;
+                    InDialogue = false;
+                    HomeGo.tag = "Home";
+                    TerziGo.tag = "ObjectiveNPC";
+                    _dialougeCounter++;
                     break;
                 case 15:    
                     _npcSprite.sprite = Kahraman;
                     AlkolButton1.SetActive(true);
                     AlkolButton2.SetActive(true);
+                    InChoose = true;
                     break;
                 //Hancı
                 case 3:  
@@ -211,7 +240,6 @@ public class DialogueSystem : MonoBehaviour
                     _npcSprite.sprite = Hanci;
                     break;
                 case 13:
-                    //InDialogue = false;
                     _npcSprite.sprite = Hanci;
                     break;
                 case 14:
@@ -219,11 +247,13 @@ public class DialogueSystem : MonoBehaviour
                     break;
                 case 16:
                     _npcSprite.sprite = Hanci;
-                    AlkolButton1.SetActive(false);
-                    AlkolButton2.SetActive(false);
+                    InChoose = false;
                     break;
                 case 17:
                     InDialogue = false;
+                    InNPCDialogue = false;
+                    _canbeTalk = false;
+                    _canbeTalk = true;
                     _npcSprite.sprite = Hanci;
                     HanciGo.tag = "NPC";
                     BakkalGo.tag = "ObjectiveNPC";
@@ -281,14 +311,46 @@ public class DialogueSystem : MonoBehaviour
                     break;
                 //Çoban
                 case 28:
+                case 39:    
                 case 30:
+                case 41:
+                case 43:    
                     _npcSprite.sprite = Coban;
+                    break;
+                case 42:
+                    InDialogue = false;
+                    _npcSprite.sprite = Coban;
+                    _dialougeCounter = 37;
+                    CobanGo.tag = "NPC";
+                    CiftciGo.tag = "ObjectiveNPC";
+                    break;
+                case 45:
+                    InDialogue = false;
+                    CobanGo.tag = "NPC";
+                    HomeGo.tag = "ObjectiveNPC";
+                    _dialougeCounter++;
                     break;
                 case 32:
                     InDialogue = false;
                     CiftciGo.tag = "ObjectiveNPC";
                     CobanGo.tag = "NPC";
                     _dialougeCounter++;
+                    break;
+                //Terzi
+                case 49:
+                    _npcSprite.sprite = Terzi;
+                    break;
+                case 51:
+                    InDialogue = false;
+                    OgretmenGo.tag = "ObjectiveNPC";
+                    TerziGo.tag = "NPC";
+                    _dialougeCounter++;
+                    break;
+                //Öğretmen
+                case 52:
+                case 54:    
+                case 56:
+                    _npcSprite.sprite = Ogretmen;
                     break;
             }
         }
@@ -305,7 +367,6 @@ public class DialogueSystem : MonoBehaviour
 
         if (other.CompareTag("ObjectiveNPC"))
         {
-            Debug.Log("calisti");
             InNPCDialogue = false;
             _canbeTalk = false;
             InDialogue = false;
@@ -322,10 +383,32 @@ public class DialogueSystem : MonoBehaviour
     {
         _alkolCounter++;
         NextText();
+        AlkolButton1.SetActive(false);
+        AlkolButton2.SetActive(false);
     }
 
     public void ChooseDontDrink()
     {
+        NextText();
+        AlkolButton1.SetActive(false);
+        AlkolButton2.SetActive(false);
+    }
+
+    public void ChooseRightFood()
+    {
+        _dialougeCounter = 42;
+        NextText();
+        InChoose = false;
+        YemekSecimi1.SetActive(false);
+        YemekSecimi2.SetActive(false);
+    }
+
+    public void ChooseWrongFood()
+    {
+        Debug.Log("Calisti");
+        YemekSecimi1.SetActive(false);
+        YemekSecimi2.SetActive(false);
+        InChoose = false;
         NextText();
     }
 }
