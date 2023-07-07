@@ -29,5 +29,10 @@ public class PlayerMovement : MonoBehaviour
         
             transform.Translate(movement);
         }
+
+        if (_dialogueSystem.InDialogue)
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 }
