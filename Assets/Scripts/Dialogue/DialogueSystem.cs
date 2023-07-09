@@ -24,12 +24,13 @@ public class DialogueSystem : MonoBehaviour
     private int _alkolCounter;
 
     public bool InDialogue;
-    
     private bool InNPCDialogue;
     private bool _canbeTalk;
     private bool _entryTextCompleted;
     private bool InChoose;
     private int _dialougeCounter;
+
+    public bool BakkalMissionComplete;
     
     private Collider2D collider;
 
@@ -54,6 +55,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private Sprite Coban;
     [SerializeField] private Sprite Ogretmen;
     [SerializeField] private Sprite Sarapci;
+    [SerializeField] private Sprite Zarf;
     
     [Header("GameObjects")]
     [SerializeField] private GameObject BakkalGo;
@@ -83,6 +85,7 @@ public class DialogueSystem : MonoBehaviour
     void Update()
     {
         //Debug.Log(_canbeTalk);
+        //Debug.Log(InChoose);
         //Debug.Log(_dialougeCounter);
         //Debug.Log(InDialogue + "  In dialogue");
         //Debug.Log(InNPCDialogue + "  In NPC dialogue");
@@ -134,6 +137,16 @@ public class DialogueSystem : MonoBehaviour
         if (DialoguePanel.activeInHierarchy)
         {
             InDialogue = true;
+        }
+
+        if (AlkolButton1.activeInHierarchy || YemekSecimi1.activeInHierarchy)
+        {
+            InChoose = true;
+        }
+
+        else
+        {
+            InChoose = false;
         }
     }
 
@@ -216,7 +229,10 @@ public class DialogueSystem : MonoBehaviour
                 case 73:
                 case 75:    
                 case 81: 
-                case 83:       
+                case 83:   
+                case 90:    
+                case 93:
+                case 94:    
                 case 10:
                     _npcSprite.sprite = Kahraman;
                     break;
@@ -242,9 +258,9 @@ public class DialogueSystem : MonoBehaviour
                     break;
                 case 61:
                     _npcSprite.sprite = Kahraman;
-                    InChoose = true;
                     AlkolButton1.SetActive(true);
                     AlkolButton2.SetActive(true);
+                    InChoose = true;
                     ButtonText1.text = "Hiç teklif etmeyeceksiniz zannettim! (Alkol içer)";
                     ButtonText2.text = "Öğretmeninize söylemeden atın onu! (Alkol içmez)";
                     break;
@@ -268,9 +284,9 @@ public class DialogueSystem : MonoBehaviour
                     break;
                 case 78:
                     _npcSprite.sprite = Kahraman;
-                    InChoose = true;
                     AlkolButton1.SetActive(true);
                     AlkolButton2.SetActive(true);
+                    InChoose = true;
                     ButtonText1.text = "HEY HEY HEY!!! ŞİMDİDEN KENDİME DAHA ÇOK GÜVENİYORUM. (Alkol içer)";
                     ButtonText2.text = "Hey sana afiyet olsun. Benim işlerim var. (Alkol içmez)";
                     break;
@@ -285,6 +301,18 @@ public class DialogueSystem : MonoBehaviour
                     InDialogue = false;
                     CicekciGo.tag = "NPC";
                     PostaciGo.tag = "ObjectiveNPC";
+                    break;
+                case 91:
+                    _dialougeCounter++;
+                    InDialogue = false;
+                    PostaciGo.tag = "NPC";
+                    TatliciGo.tag = "ObjectiveNPC";
+                    break;
+                case 95:
+                    _dialougeCounter++;
+                    InDialogue = false;
+                    TatliciGo.tag = "NPC";
+                    KizimizGo.tag = "ObjectiveNPC";
                     break;
                 case 15:    
                     _npcSprite.sprite = Kahraman;
@@ -358,7 +386,11 @@ public class DialogueSystem : MonoBehaviour
                     break;
                 case 22:
                     InDialogue = false;
-                    _dialougeCounter++;
+                    _canbeTalk = false;
+                    if (BakkalMissionComplete)
+                    {
+                        _dialougeCounter++;
+                    }
                     break;
                 case 27:
                     InDialogue = false;
@@ -442,6 +474,17 @@ public class DialogueSystem : MonoBehaviour
                 case 85:
                     _npcSprite.sprite = Postaci;
                     break;
+                //Mektup
+                case 86:
+                case 87:
+                case 88:
+                case 89:
+                    _npcSprite.sprite = Zarf;
+                    break;
+                //Tatlıcı
+                case 92:
+                    _npcSprite.sprite = Tatlici;
+                    break;
             }
         }
     }
@@ -502,5 +545,10 @@ public class DialogueSystem : MonoBehaviour
         YemekSecimi2.SetActive(false);
         InChoose = false;
         NextText();
+    }
+
+    public void RunTrriggerStay()
+    {
+        OnTriggerEnter2D(collider);
     }
 }
