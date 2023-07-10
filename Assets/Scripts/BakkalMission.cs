@@ -29,7 +29,6 @@ public class BakkalMission : MonoBehaviour
             {
                 _canBeTakeApples = false;
                 _dialogueSystem.BakkalMissionComplete = true;
-                _dialogueSystem.RunTrriggerStay();
             }
         }
     }

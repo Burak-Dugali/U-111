@@ -10,6 +10,9 @@ TagManager:
   - Home
   - Objects
   - Top
+  - Otlar
+  - HanDis
+  - EvDis
   layers:
   - Default
   - TransparentFX

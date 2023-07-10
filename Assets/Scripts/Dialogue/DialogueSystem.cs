@@ -31,6 +31,7 @@ public class DialogueSystem : MonoBehaviour
     private int _dialougeCounter;
 
     public bool BakkalMissionComplete;
+    public bool CiftciMissionComplete;
     
     private Collider2D collider;
 
@@ -231,12 +232,19 @@ public class DialogueSystem : MonoBehaviour
                 case 81: 
                 case 83:   
                 case 90:    
-                case 93:
-                case 94:    
-                case 10:
+                case 97:
+                case 101:
+                case 103:
+                case 105:
+                case 108:
+                case 111:
+                case 113:
+                case 114:
+                case 116:
+                case 94:
                     _npcSprite.sprite = Kahraman;
                     break;
-                case 40:   
+                case 40:          
                     YemekSecimi1.SetActive(true);
                     YemekSecimi2.SetActive(true);
                     _npcSprite.sprite = Kahraman;
@@ -309,16 +317,30 @@ public class DialogueSystem : MonoBehaviour
                     TatliciGo.tag = "ObjectiveNPC";
                     break;
                 case 95:
-                    _dialougeCounter++;
                     InDialogue = false;
+                    _dialougeCounter++;
                     TatliciGo.tag = "NPC";
                     KizimizGo.tag = "ObjectiveNPC";
+                    if (_alkolCounter == 2 || _alkolCounter == 3)
+                    {
+                        _dialougeCounter = 120;
+                    }
                     break;
                 case 15:    
                     _npcSprite.sprite = Kahraman;
                     AlkolButton1.SetActive(true);
                     AlkolButton2.SetActive(true);
                     InChoose = true;
+                    break;
+                case 10:
+                    InDialogue = false;
+                    _canbeTalk = false;
+                    if (CiftciMissionComplete)
+                    {
+                        _dialougeCounter++;
+                        InDialogue = true;
+                        _canbeTalk = true;
+                    }
                     break;
                 //Hancı
                 case 3:  
@@ -357,7 +379,6 @@ public class DialogueSystem : MonoBehaviour
                     _npcSprite.sprite = Ciftci;
                     break;
                 case 11:
-                    InDialogue = false;
                     _npcSprite.sprite = Ciftci;
                     break;
                 case 12:
@@ -390,6 +411,8 @@ public class DialogueSystem : MonoBehaviour
                     if (BakkalMissionComplete)
                     {
                         _dialougeCounter++;
+                        InDialogue = true;
+                        _canbeTalk = true;
                     }
                     break;
                 case 27:
@@ -485,6 +508,22 @@ public class DialogueSystem : MonoBehaviour
                 case 92:
                     _npcSprite.sprite = Tatlici;
                     break;
+                //Kızımız
+                case 96:
+                case 98:
+                case 99:
+                case 100:
+                case 102:
+                case 104:
+                case 106:
+                case 107:
+                case 109:
+                case 110:
+                case 112:
+                case 115:
+                case 117:
+                    _npcSprite.sprite = Kizimiz;
+                    break;
             }
         }
     }
@@ -546,9 +585,5 @@ public class DialogueSystem : MonoBehaviour
         InChoose = false;
         NextText();
     }
-
-    public void RunTrriggerStay()
-    {
-        OnTriggerEnter2D(collider);
-    }
+    
 }
