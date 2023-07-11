@@ -75,12 +75,29 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private GameObject HomeGo;
     [SerializeField] private GameObject SarapciGo;
     
+    [Header("Sign GameObjects")]
+    [SerializeField] private GameObject BakkalSign;
+    [SerializeField] private GameObject BerberSign;
+    [SerializeField] private GameObject GencSign;
+    [SerializeField] private GameObject HanciSign;
+    [SerializeField] private GameObject KizimizSign;
+    [SerializeField] private GameObject PostaciSign;
+    [SerializeField] private GameObject TatliciSign;
+    [SerializeField] private GameObject TerziSign;
+    [SerializeField] private GameObject CiftciSign;
+    [SerializeField] private GameObject CicekciSign;
+    [SerializeField] private GameObject CobanSign;
+    [SerializeField] private GameObject OgretmenSign;
+    [SerializeField] private GameObject HomeSign;
+    [SerializeField] private GameObject SarapciSign;
+
 
     void Start()
     {
         InDialogue = true;
         FirstText();
         collider = GameObject.Find("Hancı").GetComponent<Collider2D>();
+        HanciSign.SetActive(true);
     }
 
     void Update()
@@ -262,6 +279,8 @@ public class DialogueSystem : MonoBehaviour
                     InDialogue = false;
                     HomeGo.tag = "Home";
                     TerziGo.tag = "ObjectiveNPC";
+                    HomeSign.SetActive(false);
+                    TerziSign.SetActive(true);
                     _dialougeCounter++;
                     break;
                 case 61:
@@ -277,17 +296,23 @@ public class DialogueSystem : MonoBehaviour
                     InDialogue = false;
                     GencGo.tag = "NPC";
                     TerziGo.tag = "ObjectiveNPC";
+                    GencSign.SetActive(false);
+                    TerziSign.SetActive(true);
                     break;
                 case 71:
                     InDialogue = false;
                     TerziGo.tag = "NPC";
                     BerberGo.tag = "ObjectiveNPC";
+                    TerziSign.SetActive(false);
+                    BerberSign.SetActive(true);
                     _dialougeCounter++;
                     break;
                 case 76:
                     InDialogue = false;
                     BerberGo.tag = "NPC";
                     SarapciGo.tag = "ObjectiveNPC";
+                    BerberSign.SetActive(false);
+                    SarapciSign.SetActive(true);
                     _dialougeCounter++;
                     break;
                 case 78:
@@ -303,24 +328,32 @@ public class DialogueSystem : MonoBehaviour
                     InDialogue = false;
                     SarapciGo.tag = "NPC";
                     CicekciGo.tag = "ObjectiveNPC";
+                    CicekciSign.SetActive(true);
+                    SarapciSign.SetActive(false);
                     break;
                 case 84:
                     _dialougeCounter++;
                     InDialogue = false;
                     CicekciGo.tag = "NPC";
                     PostaciGo.tag = "ObjectiveNPC";
+                    PostaciSign.SetActive(true);
+                    CicekciSign.SetActive(false);
                     break;
                 case 91:
                     _dialougeCounter++;
                     InDialogue = false;
                     PostaciGo.tag = "NPC";
                     TatliciGo.tag = "ObjectiveNPC";
+                    TatliciSign.SetActive(true);
+                    PostaciSign.SetActive(false);
                     break;
                 case 95:
                     InDialogue = false;
                     _dialougeCounter++;
                     TatliciGo.tag = "NPC";
                     KizimizGo.tag = "ObjectiveNPC";
+                    TatliciSign.SetActive(false);
+                    KizimizSign.SetActive(true);
                     if (_alkolCounter == 2 || _alkolCounter == 3)
                     {
                         _dialougeCounter = 120;
@@ -364,6 +397,8 @@ public class DialogueSystem : MonoBehaviour
                     _npcSprite.sprite = Hanci;
                     HanciGo.tag = "NPC";
                     BakkalGo.tag = "ObjectiveNPC";
+                    HanciSign.SetActive(false);
+                    BakkalSign.SetActive(true);
                     _dialougeCounter++;
                     break;
                 //Çiftçi
@@ -371,6 +406,8 @@ public class DialogueSystem : MonoBehaviour
                     InDialogue = false;
                     HanciGo.tag = "NPC";
                     CiftciGo.tag = "ObjectiveNPC";
+                    HanciSign.SetActive(false);
+                    CiftciSign.SetActive(true);
                     _npcSprite.sprite = Ciftci;
                     _dialougeCounter++;
                     break;
@@ -385,6 +422,8 @@ public class DialogueSystem : MonoBehaviour
                     InDialogue = false;
                     HanciGo.tag = "ObjectiveNPC";
                     CiftciGo.tag = "NPC";
+                    HanciSign.SetActive(true);
+                    CiftciSign.SetActive(false);
                     _dialougeCounter++;
                     break;
                 case 33: 
@@ -396,6 +435,8 @@ public class DialogueSystem : MonoBehaviour
                     InDialogue = false;
                     CobanGo.tag = "ObjectiveNPC";
                     CiftciGo.tag = "NPC";
+                    CobanSign.SetActive(true);
+                    CiftciSign.SetActive(false);
                     _dialougeCounter++;
                     break;
                 //Bakkal
@@ -419,6 +460,8 @@ public class DialogueSystem : MonoBehaviour
                     InDialogue = false;
                     CobanGo.tag = "ObjectiveNPC";
                     BakkalGo.tag = "NPC";
+                    CobanSign.SetActive(true);
+                    BakkalSign.SetActive(false);
                     _dialougeCounter++;
                     break;
                 //Çoban
@@ -440,12 +483,16 @@ public class DialogueSystem : MonoBehaviour
                     InDialogue = false;
                     CobanGo.tag = "NPC";
                     HomeGo.tag = "ObjectiveNPC";
+                    HomeSign.SetActive(true);
+                    CobanSign.SetActive(false);
                     _dialougeCounter++;
                     break;
                 case 32:
                     InDialogue = false;
                     CiftciGo.tag = "ObjectiveNPC";
                     CobanGo.tag = "NPC";
+                    CobanSign.SetActive(false);
+                    CiftciSign.SetActive(true);
                     _dialougeCounter++;
                     break;
                 //Terzi
@@ -460,6 +507,8 @@ public class DialogueSystem : MonoBehaviour
                     InDialogue = false;
                     OgretmenGo.tag = "ObjectiveNPC";
                     TerziGo.tag = "NPC";
+                    OgretmenSign.SetActive(true);
+                    TerziSign.SetActive(false);
                     _dialougeCounter++;
                     break;
                 //Öğretmen
@@ -473,6 +522,8 @@ public class DialogueSystem : MonoBehaviour
                     InDialogue = false;
                     OgretmenGo.tag = "NPC";
                     GencGo.tag = "ObjectiveNPC";
+                    OgretmenSign.SetActive(false);
+                    GencSign.SetActive(true);
                     _dialougeCounter++;
                     break;
                 //Genç
@@ -580,6 +631,8 @@ public class DialogueSystem : MonoBehaviour
     public void ChooseWrongFood()
     {
         Debug.Log("Calisti");
+        CobanSign.SetActive(false);
+        CiftciSign.SetActive(true);
         YemekSecimi1.SetActive(false);
         YemekSecimi2.SetActive(false);
         InChoose = false;
