@@ -31,6 +31,7 @@ public class DialogueSystem : MonoBehaviour
     private int _dialougeCounter;
 
     private FinishScene _finishScene;
+    public GameObject FinishScreen;
 
     public bool BakkalMissionComplete;
     public bool CiftciMissionComplete;
@@ -93,14 +94,30 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private GameObject HomeSign;
     [SerializeField] private GameObject SarapciSign;
 
-
+    private string BakkalName = "Bakkal";
+    private string BerberName = "Berber";
+    private string GencName = "Genç";
+    private string HanciName = "Hancı";
+    private string KahramanName = "Steve";
+    private string KizimizName = "Nancy";
+    private string PostaciName = "Postacı";
+    private string TatliciName = "Tatlıcı";
+    private string TerziName = "Terzi";
+    private string CiftciName = "Çiftçi";
+    private string CicekciName = "Çiçekçi";
+    private string CobanName = "Çoban";
+    private string OgretmenName = "Öğretmen";
+    private string SarapciName = "Şarapçı";
+    private string ZarfName = "Alice";
+    
     void Start()
     {
         InDialogue = true;
         FirstText();
         collider = GameObject.Find("Hancı").GetComponent<Collider2D>();
         HanciSign.SetActive(true);
-        _finishScene = GameObject.Find("FinishScene").GetComponent<FinishScene>();
+        _finishScene = FinishScreen.GetComponent<FinishScene>();
+        
     }
 
     void Update()
@@ -268,6 +285,7 @@ public class DialogueSystem : MonoBehaviour
                 case 130:
                 case 94:
                     _npcSprite.sprite = Kahraman;
+                    _npcName.text = KahramanName;
                     break;
                 case 131:
                     _finishScene.StartFinishScene();
@@ -276,6 +294,7 @@ public class DialogueSystem : MonoBehaviour
                     YemekSecimi1.SetActive(true);
                     YemekSecimi2.SetActive(true);
                     _npcSprite.sprite = Kahraman;
+                    _npcName.text = KahramanName;
                     InChoose = true;
                     break;
                 case 46:
@@ -284,9 +303,11 @@ public class DialogueSystem : MonoBehaviour
                     InChoose = true;
                     ButtonText1.text = "Kravatı bulmak için enerji lazım! (Alkol İçer)";
                     ButtonText2.text = "Burayı temizleyip, bunlardan kurtulsam iyi olur! (Alkol içmez)";
+                    _npcName.text = KahramanName;
                     break;
                 case 48:
                     _npcSprite.sprite = Kahraman;
+                    _npcName.text = KahramanName;
                     InDialogue = false;
                     HomeGo.tag = "Home";
                     TerziGo.tag = "ObjectiveNPC";
@@ -296,6 +317,7 @@ public class DialogueSystem : MonoBehaviour
                     break;
                 case 61:
                     _npcSprite.sprite = Kahraman;
+                    _npcName.text = KahramanName;
                     AlkolButton1.SetActive(true);
                     AlkolButton2.SetActive(true);
                     InChoose = true;
@@ -328,6 +350,7 @@ public class DialogueSystem : MonoBehaviour
                     break;
                 case 78:
                     _npcSprite.sprite = Kahraman;
+                    _npcName.text = KahramanName;
                     AlkolButton1.SetActive(true);
                     AlkolButton2.SetActive(true);
                     InChoose = true;
@@ -372,6 +395,7 @@ public class DialogueSystem : MonoBehaviour
                     break;
                 case 15:    
                     _npcSprite.sprite = Kahraman;
+                    _npcName.text = KahramanName;
                     AlkolButton1.SetActive(true);
                     AlkolButton2.SetActive(true);
                     InChoose = true;
@@ -390,15 +414,19 @@ public class DialogueSystem : MonoBehaviour
                 case 3:  
                 case 5:
                     _npcSprite.sprite = Hanci;
+                    _npcName.text = HanciName;
                     break;
                 case 13:
                     _npcSprite.sprite = Hanci;
+                    _npcName.text = HanciName;
                     break;
                 case 14:
                     _npcSprite.sprite = Hanci;
+                    _npcName.text = HanciName;
                     break;
                 case 16:
                     _npcSprite.sprite = Hanci;
+                    _npcName.text = HanciName;
                     break;
                 case 17:
                     InDialogue = false;
@@ -406,6 +434,7 @@ public class DialogueSystem : MonoBehaviour
                     _canbeTalk = false;
                     _canbeTalk = true;
                     _npcSprite.sprite = Hanci;
+                    _npcName.text = HanciName;
                     HanciGo.tag = "NPC";
                     BakkalGo.tag = "ObjectiveNPC";
                     HanciSign.SetActive(false);
@@ -420,14 +449,17 @@ public class DialogueSystem : MonoBehaviour
                     HanciSign.SetActive(false);
                     CiftciSign.SetActive(true);
                     _npcSprite.sprite = Ciftci;
+                    _npcName.text = CiftciName;
                     _dialougeCounter++;
                     break;
                 case 7:
                 case 9:
                     _npcSprite.sprite = Ciftci;
+                    _npcName.text = CiftciName;
                     break;
                 case 11:
                     _npcSprite.sprite = Ciftci;
+                    _npcName.text = CiftciName;
                     break;
                 case 12:
                     InDialogue = false;
@@ -441,6 +473,7 @@ public class DialogueSystem : MonoBehaviour
                 case 35:
                 case 37:
                     _npcSprite.sprite = Ciftci;
+                    _npcName.text = CiftciName;
                     break;
                 case 38:
                     InDialogue = false;
@@ -456,6 +489,7 @@ public class DialogueSystem : MonoBehaviour
                 case 23:
                 case 25:    
                     _npcSprite.sprite = Bakkal;
+                    _npcName.text = BakkalName;
                     break;
                 case 22:
                     InDialogue = false;
@@ -482,6 +516,7 @@ public class DialogueSystem : MonoBehaviour
                 case 41:
                 case 43:    
                     _npcSprite.sprite = Coban;
+                    _npcName.text = CobanName;
                     break;
                 case 42:
                     InDialogue = false;
@@ -513,6 +548,7 @@ public class DialogueSystem : MonoBehaviour
                 case 69:    
                 case 49:
                     _npcSprite.sprite = Terzi;
+                    _npcName.text = TerziName;
                     break;
                 case 51:
                     InDialogue = false;
@@ -528,6 +564,7 @@ public class DialogueSystem : MonoBehaviour
                 case 58:    
                 case 56:
                     _npcSprite.sprite = Ogretmen;
+                    _npcName.text = OgretmenName;
                     break;
                 case 59:
                     InDialogue = false;
@@ -540,24 +577,29 @@ public class DialogueSystem : MonoBehaviour
                 //Genç
                 case 60:
                     _npcSprite.sprite = Genc;
+                    _npcName.text = GencName;
                     break;
                 //Berber
                 case 72:
                 case 74:
                     _npcSprite.sprite = Berber;
+                    _npcName.text = BerberName;
                     break;
                 //Şarapçı
                 case 77:
                     _npcSprite.sprite = Sarapci;
+                    _npcName.text = SarapciName;
                     break;
                 //Çiçekçi
                 case 80:
                 case 82:
                     _npcSprite.sprite = Cicekci;
+                    _npcName.text = CicekciName;
                     break;
                 //Postacı
                 case 85:
                     _npcSprite.sprite = Postaci;
+                    _npcName.text = PostaciName;
                     break;
                 //Mektup
                 case 86:
@@ -565,10 +607,12 @@ public class DialogueSystem : MonoBehaviour
                 case 88:
                 case 89:
                     _npcSprite.sprite = Zarf;
+                    _npcName.text = ZarfName;
                     break;
                 //Tatlıcı
                 case 92:
                     _npcSprite.sprite = Tatlici;
+                    _npcName.text = TatliciName;
                     break;
                 //Kızımız
                 case 96:
@@ -591,6 +635,7 @@ public class DialogueSystem : MonoBehaviour
                 case 127:
                 case 129:
                     _npcSprite.sprite = Kizimiz;
+                    _npcName.text = KizimizName;
                     break;
                 case 118:
                     _finishScene.StartFinishScene();
