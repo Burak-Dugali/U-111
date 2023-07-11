@@ -30,6 +30,8 @@ public class DialogueSystem : MonoBehaviour
     private bool InChoose;
     private int _dialougeCounter;
 
+    private FinishScene _finishScene;
+
     public bool BakkalMissionComplete;
     public bool CiftciMissionComplete;
     
@@ -98,6 +100,7 @@ public class DialogueSystem : MonoBehaviour
         FirstText();
         collider = GameObject.Find("Hancı").GetComponent<Collider2D>();
         HanciSign.SetActive(true);
+        _finishScene = GameObject.Find("FinishScene").GetComponent<FinishScene>();
     }
 
     void Update()
@@ -258,8 +261,16 @@ public class DialogueSystem : MonoBehaviour
                 case 113:
                 case 114:
                 case 116:
+                case 121:
+                case 124:
+                case 126:
+                case 128:
+                case 130:
                 case 94:
                     _npcSprite.sprite = Kahraman;
+                    break;
+                case 131:
+                    _finishScene.StartFinishScene();
                     break;
                 case 40:          
                     YemekSecimi1.SetActive(true);
@@ -573,8 +584,18 @@ public class DialogueSystem : MonoBehaviour
                 case 112:
                 case 115:
                 case 117:
+                case 120:
+                case 122:
+                case 123:
+                case 125:
+                case 127:
+                case 129:
                     _npcSprite.sprite = Kizimiz;
                     break;
+                case 118:
+                    _finishScene.StartFinishScene();
+                    break;
+                
             }
         }
     }
