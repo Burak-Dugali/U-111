@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 
 public class FinishScene : MonoBehaviour
 {
-    private Image panelImage; // Panelin Image bileşeni
+    [SerializeField] private Image panelImage; // Panelin Image bileşeni
     
     public void StartFinishScene()
     {
@@ -18,6 +18,6 @@ public class FinishScene : MonoBehaviour
 
     private void Start()
     {
-        panelImage = GetComponent<Image>();
+
     }
 }
