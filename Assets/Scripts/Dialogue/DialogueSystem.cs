@@ -283,11 +283,17 @@ public class DialogueSystem : MonoBehaviour
                 case 126:
                 case 128:
                 case 130:
+                case 134:
+                case 138:
+                case 142:
                 case 94:
                     _npcSprite.sprite = Kahraman;
                     _npcName.text = KahramanName;
                     break;
                 case 131:
+                    _finishScene.StartFinishScene();
+                    break;
+                case 144:
                     _finishScene.StartFinishScene();
                     break;
                 case 40:          
@@ -391,6 +397,11 @@ public class DialogueSystem : MonoBehaviour
                     if (_alkolCounter == 2 || _alkolCounter == 3)
                     {
                         _dialougeCounter = 120;
+                    }
+
+                    if (_alkolCounter == 4 || _alkolCounter > 4)
+                    {
+                        _dialougeCounter = 133;
                     }
                     break;
                 case 15:    
@@ -634,6 +645,13 @@ public class DialogueSystem : MonoBehaviour
                 case 125:
                 case 127:
                 case 129:
+                case 133:
+                case 135:
+                case 136:
+                case 137:
+                case 139:
+                case 141:
+                case 143:
                     _npcSprite.sprite = Kizimiz;
                     _npcName.text = KizimizName;
                     break;
