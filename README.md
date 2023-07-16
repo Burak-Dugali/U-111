@@ -112,7 +112,7 @@ o	Bayramdan dolayı kopan iletişimin eskisi gibi sık ve düzenli bir hale gelm
 
 • **Puan Tamamlama Mantığı** : Toplamda proje boyunca tamamlanması gereken 130 puanlık bir backlog bulunmaktadır. 3. Sprint için tamamlanması beklenen asıl puan 50 iken, 2. Sprint zamanında tamamlanmayan bir görevle beraber 3. Sprint içerisinde tamamlanması beklenen puan 60'a çıkmıştır. <br/>
 
-•	**Daily Scrum** :  Daily Scrum'lar akşam saat dokuz – on arasında takım üyeleri için uygun saate göre seçilmiş, Discord sesli kanalından gerçekleştirilmiştir. Gerektiği zamanlarda o konu için açılan metin kanalında notlar paylaşılmıştır. ( Gün içerisinde gerekli durumlarda whatsapp üzerinden mesajlaşarak ihtiyaç duyulan şeyler söylenmiştir. ) Toplantı zamanlarında alınan notlar Readme'de tarafımızdan paylaşılmaktadır.  [U-111 Discord Daily Scrum Chats](https://github.com/Burak-Dugali/U-111/blob/main/U-111%20Daily%20Scrum%20Notlar%C4%B1.docx) <br/>
+•	**Daily Scrum** :  Daily Scrum'lar akşam saat dokuz – on arasında takım üyeleri için uygun saate göre seçilmiş, Discord sesli kanalından gerçekleştirilmiştir. Gerektiği zamanlarda o konu için açılan metin kanalında notlar paylaşılmıştır. ( Gün içerisinde gerekli durumlarda whatsapp üzerinden mesajlaşarak ihtiyaç duyulan şeyler söylenmiştir. ) Toplantı zamanlarında alınan notlar Readme'de tarafımızdan paylaşılmaktadır.  [U-111 Daily Scrum Notları](https://github.com/Burak-Dugali/U-111/blob/main/U-111%20Daily%20Scrum%20Notlar%C4%B1.docx) <br/>
 
 •	**Backlog düzeni ve Story seçimleri**: Backlog ilk yapılması gereken storylere göre ayarlanmıştır. Birbiri ile bağlantılı görevler paralel şekilde ilerlemesi için planlama yapılmıştır. <br/>
 
