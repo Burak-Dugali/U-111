@@ -34,6 +34,13 @@ Oyuculara, ana karakterimizin hikayesini hem kasabalı ile konuşarak hem de gö
 
 [Unity Team 111 Miro Backlog Board](https://miro.com/app/board/uXjVM_9kYqM=/?share_link_id=616186124308)
 
+# Kullanılan Assetler
+
+• [SH Pinscher Font](https://fontmeme.com/fonts/sh-pinscher-font/) <br/>
+• [Just Relax - Oyunda kullanılan Müzik](https://pixabay.com/tr/music/guzel-oyunlar-just-relax-11157/) <br/>
+
+
+
 
 # Sprint 1 
 
