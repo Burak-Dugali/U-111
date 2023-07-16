@@ -96,3 +96,33 @@ o	Yakın zamanda gelecek olan bayram tatilinin ürün geliştirmesini etkilememe
 •	Sprint Retrospective : <br/>
 o	Daha hızlı ama planlı bir şekilde ilerlenmesine karar verilmiştir. <br/>
 o	Bayramdan dolayı kopan iletişimin eskisi gibi sık ve düzenli bir hale gelmesine karar verilmiştir.<br/>
+
+# Sprint 3
+
+•	**Sprint Notları** : User story’ler product backlog’ların içerisine yazılmıştır. Product backlog itemlere tıklandığında hikayelerin detaylarına ulaşılabilir. <br/>
+
+•	**Sprint İçerisinde Tamamlanması Tahmin Edilen Puan** :  60 <br/> 
+
+• **Puan Tamamlama Mantığı** : Toplamda proje boyunca tamamlanması gereken 130 puanlık bir backlog bulunmaktadır. 3. Sprint için tamamlanması beklenen asıl puan 50 iken, 2. Sprint zamanında tamamlanmayan bir görevle beraber 3. Sprint içerisinde tamamlanması beklenen puan 60'a çıkmıştır. <br/>
+
+•	**Daily Scrum** :  Daily Scrum'lar akşam saat dokuz – on arasında takım üyeleri için uygun saate göre seçilmiş, Discord sesli kanalından gerçekleştirilmiştir. Gerektiği zamanlarda o konu için açılan metin kanalında notlar paylaşılmıştır. ( Gün içerisinde gerekli durumlarda whatsapp üzerinden mesajlaşarak ihtiyaç duyulan şeyler söylenmiştir. ) Toplantı zamanlarında alınan notlar Readme'de tarafımızdan paylaşılmaktadır. 
+
+•	**Backlog düzeni ve Story seçimleri**: Backlog ilk yapılması gereken storylere göre ayarlanmıştır. Birbiri ile bağlantılı görevler paralel şekilde ilerlemesi için planlama yapılmıştır. <br/>
+
+[Unity Team 111 Miro Backlog Board](https://miro.com/app/board/uXjVM_9kYqM=/?share_link_id=616186124308)
+
+• **Sprint Board Update** : 
+
+![U-111 Miro Board](https://cdn.discordapp.com/attachments/1119696574004609196/1130254957258477639/Ekran_goruntusu_2023-07-17_002436.png)
+
+• **Ürün Durumu** : Ekran Görüntüleri :
+
+![U-111 Last Drop](https://cdn.discordapp.com/attachments/1119696574004609196/1130254863574499419/Screenshot_2023-07-17-00-41-11-177_com.miui.videoplayer.jpg)
+![U-111 Last Drop](https://cdn.discordapp.com/attachments/1119696574004609196/1130254863318650900/Screenshot_2023-07-17-00-41-20-736_com.miui.videoplayer.jpg)
+![U-111 Last Drop](https://cdn.discordapp.com/attachments/1119696574004609196/1130254863046017165/Screenshot_2023-07-17-00-46-00-533_com.miui.videoplayer.jpg)
+
+• **Sprint Review** : Alınan kararlar: Bayram tatilinin değerlendirilememsinden dolayı 3. Sprint'e çok fazla şey kaldığı için öncelikler harita tasarımı, oyun içi tasarımlar, görev ve dialog mekaniğine verilmiştir. Sprint Review Katılımcıları : Enes Taha Tınmaz, Zeynep Bozkır, Efranur Aksoy, İpek Bozkurt
+
+•	Sprint Retrospective : <br/>
+o	Düşündüğümüz her şeyi oyuna aktaramadığımız için üzülsek de herkesin elinden geleni yaptığını, kendini geliştirdiğini bilerek 3. Sprinti tamamladık. <br/>
+o	Eksikleri olsa da beraber yaptığımız, ortaya koyduğumuz ürün saesinde güzel bir bootcamp geçirdik. <br/>
