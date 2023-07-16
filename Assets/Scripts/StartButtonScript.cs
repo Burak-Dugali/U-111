@@ -18,4 +18,6 @@ public class StartButtonScript : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+    
+    
 }

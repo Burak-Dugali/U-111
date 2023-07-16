@@ -110,6 +110,8 @@ public class DialogueSystem : MonoBehaviour
     private string SarapciName = "Şarapçı";
     private string ZarfName = "Alice";
     
+    [SerializeField] private GameObject _tutorial;
+    
     void Start()
     {
         InDialogue = true;
@@ -117,6 +119,7 @@ public class DialogueSystem : MonoBehaviour
         collider = GameObject.Find("Hancı").GetComponent<Collider2D>();
         HanciSign.SetActive(true);
         _finishScene = FinishScreen.GetComponent<FinishScene>();
+        PostaciGo.SetActive(false);
         
     }
 
@@ -266,8 +269,7 @@ public class DialogueSystem : MonoBehaviour
                 case 70: 
                 case 73:
                 case 75:    
-                case 81: 
-                case 83:   
+                case 81:
                 case 90:    
                 case 97:
                 case 101:
@@ -295,6 +297,11 @@ public class DialogueSystem : MonoBehaviour
                     break;
                 case 144:
                     _finishScene.StartFinishScene();
+                    break;
+                case 83:
+                    _npcSprite.sprite = Kahraman;
+                    _npcName.text = KahramanName;
+                    PostaciGo.SetActive(true);
                     break;
                 case 40:          
                     YemekSecimi1.SetActive(true);
@@ -426,6 +433,7 @@ public class DialogueSystem : MonoBehaviour
                 case 5:
                     _npcSprite.sprite = Hanci;
                     _npcName.text = HanciName;
+                    _tutorial.SetActive(false);
                     break;
                 case 13:
                     _npcSprite.sprite = Hanci;
